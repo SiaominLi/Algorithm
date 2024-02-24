@@ -1,0 +1,44 @@
+
+public class HW08_4109037012_3 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+	 public int maxAreaOfIsland(int[][] grid)  // Main method.
+	    {
+	        int supportMetod = 0; // Set var for the support method so that we can hold onto the method's progress.
+	        int maxIslandSize = 0; // Set var for max area of an Island.
+	        
+	         for(int x = 0; x < grid.length; x++) // Loop through the matrix in search for a starting point.
+	         {
+	             for(int y = 0; y < grid[0].length; y++)
+	             {
+	                 if(grid[x][y] == 1) // When a starting point has been found, call the support method.
+	                 {
+	                     supportMetod = helper(grid, x, y);
+						 
+	                     maxIslandSize = Math.max(maxIslandSize, supportMetod); // Assess which var holds the max value.
+	                 }
+	             }
+	         }
+	             return maxIslandSize; // return the said value;
+	    }
+	 private int helper(int[][] grid, int x, int y) // Support method.
+	    {
+	        if(x < 0 || grid.length-1 < x || y < 0 || grid[0].length-1 < y || grid[x][y] == 0) // Check for boundaries or spots that are coverd in water.
+	        {
+	            return 0;
+	        }
+	       
+	        grid[x][y] = 0; // When an Island has been found, start calculate it's size and then sink the sucker.
+	        
+	        int up = helper(grid, x-1, y);  // Valid ways to traversing  the matrix.
+	        int down = helper(grid, x+1, y);
+	        int left = helper(grid, x, y-1);
+	        int right = helper(grid, x, y+1);
+	        
+	        return up + down + left + right + 1; // Return the area of the Island to the main method for further assessment.
+			
+	    } 
+}

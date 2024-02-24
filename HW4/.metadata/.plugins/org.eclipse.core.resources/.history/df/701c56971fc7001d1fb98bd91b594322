@@ -1,0 +1,9 @@
+
+public class HW4_4109037012_2 {
+
+	public static void main(String[] args) {
+		System.out.print("ss");
+
+	}
+
+}

@@ -1,0 +1,45 @@
+//go right than go left O(2N)
+public class HW05_4109037012_1 extends littlebit
+{
+
+	public static void main(String[] args) {
+		HW05_4109037012_1 hw = new HW05_4109037012_1();
+		int[] arr = {39,7,1,34,50,33,41,59,90,74,74,64,25,70,93,71,7,95,69,45} ;
+		int ans = hw.l_bit(arr);
+		System.out.print( "ans = "+ ans );
+	}
+
+	@Override
+	public int l_bit(int[] A) {
+		int mark[] = new int[A.length];
+		int ans = 0;
+		//go right
+		mark[0] = 1;
+		for( int i = 1 ; i < A.length ; i++ ) {
+			if( A[i] > A[i-1] ) {
+				mark[i] = mark[i-1]+1;
+			}
+			else if( A[i] ==  A[i-1] ) {
+				mark[i] = mark[i-1];
+			}
+			else {
+				mark[i] = 1;
+			}
+		}
+		
+		//go left
+		for( int i = A.length-2 ; i >= 0 ; i-- ) {
+			if( A[i] > A[i+1] && mark[i] <= mark[i+1]) {
+				mark[i] = mark[i+1]+1;
+			}
+			else if( A[i] ==  A[i+1] && mark[i] < mark[i+1] ) {
+				mark[i] = mark[i+1];
+			}
+			ans += mark[i];
+		}
+		ans += mark[A.length-1];
+		
+		return ans;
+	}
+
+}

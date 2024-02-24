@@ -1,0 +1,50 @@
+
+public class HW06_4109037012_2 extends MedianOfArrays{
+
+	public static void main(String[] args) {
+		HW06_4109037012_2 hw = new HW06_4109037012_2();
+		int[][] arr = {{3}, {-1, 4}, {-2, 4, 12}} ;
+		double ans = hw.find_median(arr);
+		System.out.print( "ans2 = "+ ans );
+	}
+
+	@Override
+	public double find_median(int[][] arrays) {
+		int n= arrays.length;
+        int low = arrays[0][0];
+        int high = arrays[n-1][n-1];
+        int size = 0;
+        
+        for (int[] subArr : arrays) {
+            size += subArr.length;
+        }
+        
+        while(low < high){
+            int mid = low + (high - low)/2;
+            int count = lessEqual(arrays,mid);
+            if(count < size){
+                low = mid+1;
+            }
+            else{
+                high = mid;
+            }
+        }
+        return low;
+	}
+	 public int lessEqual(int[][] matrix, int target){
+	        int count = 0 , len = matrix.length, i = len-1, j=0;
+	        
+	        while(i >=0 && j<len){
+	            if(matrix[i][j] > target){
+	                i--;
+	            }
+	            else
+	            {
+	                count = count + i +1;
+	                j++;
+	            }
+	        }
+	        return count;
+	    }
+
+}

@@ -1,0 +1,29 @@
+
+public class HW04_4109037012_1 extends doge_coin 
+{
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		HW04_4109037012_1 hw = new HW04_4109037012_1();
+		int[] arr = {7,1,5,3,6} ;
+		int ans = hw.doge(arr);
+//		System.out.print(ans);
+	}
+
+	@Override
+	public int doge(int[] price) {
+		int min = price[0] , minus = 0;
+		
+		for(int i = 0 ; i< price.length ; i++ ) {
+			if( price[i] < min )
+				min = price[i];
+			else if( price[i] - min > minus ) {
+				System.out.println("yes"+(price[i] - min));
+				minus = price[i] - min;
+			}
+		}
+		System.out.println("min:" + min +"  minus"+minus);
+		return minus;
+	}
+
+}
