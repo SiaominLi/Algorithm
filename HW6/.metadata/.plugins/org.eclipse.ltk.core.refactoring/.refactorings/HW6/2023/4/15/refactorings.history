@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Copy element &apos;HW06_4109037012_3.java&apos; to &apos;HW06_4109037012_3.java&apos;&#x0A;- Original project: &apos;HW6&apos;&#x0A;- Destination element: &apos;HW06_4109037012_3.java&apos;&#x0A;- Original element: &apos;HW06_4109037012_3.java&apos;" description="Copy compilation unit" destination="/src&lt;{HW06_4109037012_3.java" element1="/src&lt;{HW06_4109037012_3.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1681464251373" units="1" version="1.0"/>
-</session>

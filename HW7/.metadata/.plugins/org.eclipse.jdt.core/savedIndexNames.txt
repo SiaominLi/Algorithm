@@ -1,4 +1,0 @@
-INDEX VERSION 1.131+/Users/lixiaomin/algorithm HW/HW7/.metadata/.plugins/org.eclipse.jdt.core
-3940274832.index
-1865797976.index
-1816963510.index
